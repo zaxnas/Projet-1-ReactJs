@@ -19,11 +19,14 @@ export default function DisgnPage(props) {
         props.temp(props.key)
     }*/
     return (
-        <div className ="" style = {{maxWidth:'200px',maxHeight:'300px',padding:'2px'}}>
-                <img src={props.msa.image}  alt="img" style={{maxWidth:'180px',maxHeight:'300px',padding:'2px'}}/>
-                <h3>{props.msa.title}</h3>
-                <h4 className="heading-4">{props.msa.price}$ <span className = {`tag ${SetVoteClass(props.msa.average)}`} style={{marginLeft:'10px'}}>{props.msa.average}</span> </h4> 
-                { <input type="button" value="Buy Now !" onClick={()=>{props.GetBuy(props.msa )}} />   }
+        <div className ="" style = {{padding:'5px',position:"relative"}}>
+                <img className = "imgMSA" src={props.msa.image}  alt="img" />
+                <h5>{props.msa.title}</h5>
+                <h5 className="heading-4">{props.msa.price}$ <span className = {` tag ${SetVoteClass(props.msa.average)}`} style={{marginLeft:'10px',borderRadius:'5px'}} ><strong>{props.msa.average}</strong></span></h5> 
+                { <input type="button"
+                 value="Buy Now !" 
+                 onClick={()=>{props.GetBuy(props.msa )}}
+                 className = "btn btn-secondary btn-block"/>   }
         </div>
     )
 }

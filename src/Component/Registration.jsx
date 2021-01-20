@@ -15,7 +15,17 @@ import { Link} from 'react-router-dom'
             registre:[]
         }
     } 
+    ValidEmail = (testEmail) => {
+        // eslint-disable-next-line no-useless-escape
+        let regEmail = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+        if(regEmail.test(testEmail))
+        {
+            return alert('Invalid Email Address')
+        }
+        return this.setState({testEmail:testEmail})
+    }
     SaveStateToLocalStorage = () => {
+        let emailval = {e:this.state.email}
         let user = {email:this.state.email,passWord:this.state.passWord}
         if(localStorage.getItem('users')){
             let stockAccount = JSON.parse(localStorage.getItem('users'))
@@ -24,6 +34,7 @@ import { Link} from 'react-router-dom'
                 alert("User exist")
             }
             else{
+                this.ValidEmail(emailval)
                 stockAccount = [...stockAccount,user]
                 localStorage.setItem('users',JSON.stringify(stockAccount))
                 this.props.history.push('/') 
@@ -61,7 +72,7 @@ import { Link} from 'react-router-dom'
     render() {
         return (
             <div className="container-fluid bgRegistration">
-                <div className = "row justify-content-center">
+                <div className = "row justify-content-center" style = {{height:'100vh'}}>
                     <div className = "col-12 col-sm-6 col-md-3">
                         <form className = "from-container" style={{background : "white",padding : "30px" , borderRadius:"10px",boxShadow:"0px 0px 5px 0px #000",position:"relative",top:"10vh",}}>
                             <h1 style ={{marginBottom:"30px"}}>Registration</h1>

@@ -1,18 +1,17 @@
 import React from 'react'
-
+import './DisgnPage.css'
 
 export default function DisgnPurchase(props) {
 
-    
     return (
-        <div className ="" style = {{maxWidth:'200px',maxHeight:'300px',padding:'2px'}}>
+        <div className ="disgnpurchase" style = {{padding:'5px',position:"relative"}}>
             <h3>{props.msa.title} 
                 <i className = "fas fa-times" 
-                    style = {{cursor:'pointer',float : 'right',color : 'red'}} 
-                    onClick ={() => props.GetDelete(props.msa.title) } >
+                    style = {{cursor:'pointer',float : 'right',color : 'red',marginLeft:'10px'}} 
+                    onClick ={() => props.GetDelete(props.msa.title,props.msa.price) } >
                 </i>
             </h3>
-            <img src={props.msa.image}  alt="img" style={{maxWidth:'180px',maxHeight:'300px',padding:'2px'}}/>
+            <img className ="imgMSA" src={props.msa.image}  alt="img"/>
                 
                 
         </div>

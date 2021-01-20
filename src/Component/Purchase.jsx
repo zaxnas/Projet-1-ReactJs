@@ -9,16 +9,16 @@ class Purchase extends Component {
 
         }
     }
-
+     
     GetDelete = (title,price)=>{
         this.props.Delete(title,price)
     }
 
     render() {
         return (
-            <div>
+            <div style={{flex:1,flexDirection:'row',display:'flex',justifyContent:"space-around",flexWrap:"wrap",margin:'0px 7em',color:'white',height:'100%'}}>
                  {this.props.title===''&&this.props.msaBuy.filter(item=>item.title.toLowerCase().includes(this.props.search.toLowerCase()))
-                .map(m => <DisgnPurchase msa = {m} key = {m.title} GetDelete ={this.GetDelete} />)}
+                .map(m => <DisgnPurchase msa = {m} key = {m.title} GetDelete ={this.GetDelete}/>)}
             </div>
         )
     }

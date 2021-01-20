@@ -18,7 +18,7 @@ class Anime extends Component {
        
         return (
             <div className = "container mov-presentation">          
-                <div>
+                <div style={{flex:1,flexDirection:'row',display:'flex',justifyContent:"space-around",flexWrap:"wrap",margin:'0px 7em',color:'white'}}>
                     {this.props.title===''&&this.props.arrayAnime.filter(item=>item.title.toLowerCase().includes(this.props.search.toLowerCase()))
                     .map(m => <DisgnPage msa = {m} key = {m.title} GetBuy ={this.GetBuy} />)}
                 </div>

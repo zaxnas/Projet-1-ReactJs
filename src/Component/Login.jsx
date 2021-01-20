@@ -16,7 +16,7 @@ class Login extends Component {
         return (
          
             <div className="container-fluid bgLogin">
-                <div className = "row justify-content-center">
+                <div className = "row justify-content-center" style = {{height:'100vh'}} >
                     <div className = "col-12 col-sm-6 col-md-3">
                         <form className = "from-container" style={{background : "white",padding : "30px" , borderRadius:"10px",boxShadow:"0px 0px 5px 0px #000",position:"relative",top:"20vh"}}>
                             <h1 style ={{marginBottom:"30px"}}>Login</h1>
