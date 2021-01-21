@@ -1,5 +1,5 @@
 import React from 'react'
-import './DisgnPage.css'
+import '../style/DisgnPage.css'
 
 export default function DisgnPage(props) {
 

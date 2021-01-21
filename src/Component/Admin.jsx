@@ -20,8 +20,8 @@ class Admin extends Component {
         let addMovie = {image:this.state.image,title:this.state.title,average:this.state.average,price:this.state.price} 
         this.refs.imageInputMovie.value = ""
         this.refs.titleInputMovie.value = ""
-        this.refs.averageInputMovie.value = ""
-        this.refs.priceInputMovie.value = ""
+        this.refs.averageInputMovie.value = 0
+        this.refs.priceInputMovie.value = 0
         this.setState({
             newAdd:[...this.state.newAdd,addMovie],
             image:undefined ,
@@ -37,8 +37,8 @@ class Admin extends Component {
         let addSerie = {image:this.state.image,title:this.state.title,average:this.state.average,price:this.state.price}
         this.refs.imageInputSerie.value = ""
         this.refs.titleInputSerie.value = ""
-        this.refs.averageInputSerie.value = ""
-        this.refs.priceInputMovie.value = ""
+        this.refs.averageInputSerie.value = 0
+        this.refs.priceInputMovie.value = 0
         this.setState({
             newAdd:[...this.state.newAdd,addSerie],
             image:undefined ,
@@ -54,8 +54,8 @@ class Admin extends Component {
         let addAnime = {image:this.state.image,title:this.state.title,average:this.state.average,price:this.state.price}
         this.refs.imageInputAnime.value = ""
         this.refs.titleInputAnime.value = ""
-        this.refs.averageInputAnime.value = ""
-        this.refs.priceInputMovie.value = ""
+        this.refs.averageInputAnime.value = 0
+        this.refs.priceInputMovie.value = 0
         this.setState({
             newAdd:[...this.state.newAdd,addAnime],
             image:undefined ,
@@ -68,7 +68,7 @@ class Admin extends Component {
     }
     render() {
         return (
-            <div className = "container-fluid" style={{height:'100vh'}}>
+            <div className = "container-fluid" style={{}}>
                 <div className = "row" style = {{}}>
                     <div style={{flex:1,flexDirection:'column',display:'flex',alignContent:'center',flexWrap:"wrap",margin:'0px 7em',marginTop:'20vh'}} > 
                         <h3 style= {{fontFamily:'Lobster',fontSize:'40px' ,color:'white'}}><strong><i>Add Movie</i></strong></h3> 

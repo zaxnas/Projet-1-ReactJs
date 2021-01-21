@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 //import Registration from './Registration'
 import { Link ,/*Redirect ,Route*/} from 'react-router-dom'
 import { withRouter } from 'react-router-dom'
-import './DisgnPage.css'
+import '../style/DisgnPage.css'
 
 class Login extends Component {
     constructor(props){
@@ -30,7 +30,7 @@ class Login extends Component {
                             </div>
                             <br/>
                             <div className = "form-group">
-                                <input type="text"
+                                <input type="password"
                                 value = {this.state.myPassWord}
                                 onChange = {e => this.setState({myPassWord:e.target.value})}
                                 placeholder = "Enter your PassWord ..."
@@ -47,6 +47,8 @@ class Login extends Component {
                             </div>
                             <br/>
                             <Link className="btn btn-danger btn-block" to = "/registration">Sign up</Link>
+                            <br/>
+                            <p style={{fontSize:'13px',color:'grey'}}>For administrator email :"admin123", password :"admin123"</p>
                         </form>
                     </div>
                 </div>

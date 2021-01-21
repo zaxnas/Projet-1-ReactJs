@@ -1,5 +1,6 @@
 import React from 'react'
-import './DisgnPage.css'
+//import '../../public/style/DisgnPage.css'
+
 
 export default function DisgnPurchase(props) {
 

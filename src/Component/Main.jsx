@@ -9,7 +9,7 @@ import Login from './Login'
 import Admin from './Admin'
 import Footer from './Footer'
 import Registration from './Registration'
-import './DisgnPage.css'
+import '../style/DisgnPage.css'
 
 
 
@@ -573,7 +573,10 @@ class Main extends Component {
         this.setState({
             msaBuy:[...this.state.msaBuy,temp],
             totalPrice: price 
+            
         })
+        alert(obj.title + ' will be added to your purchase list')
+        
         //console.log(temp);
         //console.log(obj);
         //console.log(this.state.msaBuy);       
@@ -607,7 +610,11 @@ class Main extends Component {
                         <Route  path="/movie">
                             <Header user={this.state.loggedUser}/>
                             <h1 style= {{fontFamily:'Lobster',fontSize:'55px' ,color:'white'}}><strong><i>Best movies of the moment</i></strong></h1> 
-                            <div>
+                            <div style = {{display: 'flex',justifyContent:'center'}}>
+                                <div className="maindiv"></div>
+                            </div>
+                            <br/><br/>
+                            <div style = {{display: 'flex',justifyContent:'center'}}>
                             <input 
                                 type = "text" 
                                 value = {this.state.search} 
@@ -616,7 +623,7 @@ class Main extends Component {
                                 placeholder = "Search ...."
                                 style = {{float : 'right',marginRight:'8em',width:'450px' ,border:'solid 2px black'}} />
                             </div>
-                            <br/><br/>
+                            <br/>
                             <Movie 
                                 arrayMovie = {this.state.arrayMovie} 
                                 search = {this.state.search} 
@@ -626,15 +633,21 @@ class Main extends Component {
                         </Route>
                         <Route path="/serie">
                             <Header user={this.state.loggedUser}/>
-                            <h1 style= {{fontFamily:'Lobster',fontSize:'55px' ,color:'white'}}><strong><i>Best series of the moment</i></strong></h1> 
-                            <input 
-                                type = "text" 
-                                value = {this.state.search} 
-                                onChange = {e => this.setState({search:e.target.value})}
-                                className = "form-control"
-                                placeholder = "Search ...."
-                                style = {{float : 'right',marginRight:'8em',width:'450px' ,border:'solid 2px black'}}  />
+                            <h1 style= {{fontFamily:'Lobster',fontSize:'55px' ,color:'white'}}><strong><i>Best series of the moment</i></strong></h1>
+                            <div style = {{display: 'flex',justifyContent:'center'}}>
+                                <div className="maindiv2"></div>
+                            </div>
                             <br/><br/>
+                            <div style = {{display: 'flex',justifyContent:'center'}}> 
+                                <input 
+                                    type = "text" 
+                                    value = {this.state.search} 
+                                    onChange = {e => this.setState({search:e.target.value})}
+                                    className = "form-control"
+                                    placeholder = "Search ...."
+                                    style = {{float : 'right',marginRight:'8em',width:'450px' ,border:'solid 2px black'}} 
+                                />
+                            </div>
                             <Serie 
                             arraySerie = {this.state.arraySerie} 
                             search = {this.state.search} 
@@ -645,14 +658,20 @@ class Main extends Component {
                         <Route path="/anime">
                             <Header user={this.state.loggedUser}/>
                             <h1 style= {{fontFamily:'Lobster',fontSize:'55px' ,color:'white'}}><strong><i>Best anime of the moment</i></strong></h1> 
-                            <input 
-                                type = "text"
-                                value = {this.state.search} 
-                                onChange = {e => this.setState({search:e.target.value})}
-                                className = "form-control"
-                                placeholder = "Search ...."
-                                style = {{float : 'right',marginRight:'8em',width:'450px' ,border:'solid 2px black'}}  />
+                            <div style = {{display: 'flex',justifyContent:'center'}}>
+                                <div className="maindiv3"></div>
+                            </div>
                             <br/><br/>
+                            <div style = {{display: 'flex',justifyContent:'center'}}>
+                                <input 
+                                    type = "text"
+                                    value = {this.state.search} 
+                                    onChange = {e => this.setState({search:e.target.value})}
+                                    className = "form-control"
+                                    placeholder = "Search ...."
+                                    style = {{float : 'right',marginRight:'8em',width:'450px' ,border:'solid 2px black'}}  
+                                />
+                            </div>
                             <Anime 
                             arrayAnime = {this.state.arrayAnime} 
                             search = {this.state.search} 
@@ -663,19 +682,25 @@ class Main extends Component {
                         <Route path="/purchase">
                             <Header user={this.state.loggedUser}/>
                             <h1 style= {{fontFamily:'Lobster',fontSize:'55px' ,color:'white'}}><strong><i> Your order :  <span>{this.state.totalPrice}$</span></i></strong></h1> 
-                            <input 
-                            type = "text" 
-                            value = {this.state.search} 
-                            onChange = {e => this.setState({search:e.target.value})}
-                            className = "form-control "
-                            placeholder = "Search ...."
-                            style = {{marginRight:'8em',float : 'right',width:'450px' ,border:'solid 2px black'}}  /> 
+                            <div style = {{display: 'flex',justifyContent:'center'}}>
+                                <div className="maindiv4"></div>
+                            </div>
                             <br/><br/>
+                            <div style = {{display: 'flex',justifyContent:'center'}}>
+                                <input 
+                                    type = "text" 
+                                    value = {this.state.search} 
+                                    onChange = {e => this.setState({search:e.target.value})}
+                                    className = "form-control "
+                                    placeholder = "Search ...."
+                                    style = {{marginRight:'8em',float : 'right',width:'450px' ,border:'solid 2px black'}}
+                                /> 
+                             </div>
                             <Purchase
                              msaBuy = {this.state.msaBuy}
                              search = {this.state.search}
                              title = {this.state.title}
-                             Delete = {this.Delete}/>
+                             Delete = {this.Delete}/>   
                         </Route>
                     </Switch>
                 </div>

@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import DisgnPage from './DisgnPage'
-import './DisgnPage.css'
+import '../style/DisgnPage.css'
 import { withRouter } from 'react-router-dom'
 
 class Serie extends Component {
@@ -17,7 +17,7 @@ class Serie extends Component {
     render() {
        
         return (
-            <div className = "container mov-presentation">
+            <div className = "container-fluid mov-presentation">
                           
                 <div style={{flex:1,flexDirection:'row',display:'flex',justifyContent:"space-around",flexWrap:"wrap",margin:'0px 7em',color:'white'}}>
                     {this.props.title===''&&this.props.arraySerie.filter(item=>item.title.toLowerCase().includes(this.props.search.toLowerCase()))

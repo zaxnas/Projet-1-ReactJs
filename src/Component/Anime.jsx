@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import DisgnPage from './DisgnPage'
-import './DisgnPage.css'
+import '../style/DisgnPage.css'
 import { withRouter } from 'react-router-dom'
 
 class Anime extends Component {
@@ -17,8 +17,8 @@ class Anime extends Component {
     render() {
        
         return (
-            <div className = "container mov-presentation">          
-                <div style={{flex:1,flexDirection:'row',display:'flex',justifyContent:"space-around",flexWrap:"wrap",margin:'0px 7em',color:'white'}}>
+            <div className = "container-fluide mov-presentation">          
+                <div style={{flex:1,flexDirection:'row',display:'flex',justifyContent:"space-around",flexWrap:"wrap",margin:'0px 7em',color:'wheat'}}>
                     {this.props.title===''&&this.props.arrayAnime.filter(item=>item.title.toLowerCase().includes(this.props.search.toLowerCase()))
                     .map(m => <DisgnPage msa = {m} key = {m.title} GetBuy ={this.GetBuy} />)}
                 </div>
